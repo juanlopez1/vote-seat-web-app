@@ -1,8 +1,7 @@
 const path = require('node:path');
-const { merge } = require('webpack-merge');
-
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { merge } = require('webpack-merge');
 
 const common = require('./webpack.common.js');
 
@@ -27,6 +26,7 @@ module.exports = merge(common, {
                             sourceMap: false,
                         },
                     },
+                    'sass-loader',
                 ],
             },
         ],

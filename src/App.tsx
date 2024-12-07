@@ -1,5 +1,4 @@
 import logo from '@vote-seat-web-app/logo.svg';
-import '@vote-seat-web-app/App.css';
 
 const App = () => (
     <div className="App">

@@ -1,0 +1,27 @@
+.header {
+    background-color: #0E0D1C;
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &__menu-btn {
+        position: absolute;
+        left: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 25%;
+
+        &:active {
+            background-color: #25234b;
+        }
+    }
+
+    &__logo {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+    }
+}

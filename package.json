@@ -5,11 +5,14 @@
     "scripts": {
         "dev": "webpack serve --config config/webpack.dev.js --progress",
         "start": "serve -s dist",
-        "build": "webpack --config config/webpack.prod.js"
+        "build": "webpack --config config/webpack.prod.js",
+        "lint": "tsc --noEmit && biome format --write"
     },
     "dependencies": {
+        "@remixicon/react": "^4.5.0",
         "react": "^19.0.0",
-        "react-dom": "^19.0.0"
+        "react-dom": "^19.0.0",
+        "react-router-dom": "^7.0.2"
     },
     "devDependencies": {
         "@babel/core": "^7.26.0",
@@ -19,6 +22,7 @@
         "@biomejs/biome": "^1.9.4",
         "@types/react": "^19.0.0",
         "@types/react-dom": "^19.0.0",
+        "@types/react-router-dom": "^5.3.3",
         "babel-loader": "^9.2.1",
         "copy-webpack-plugin": "^12.0.2",
         "css-loader": "^7.1.2",

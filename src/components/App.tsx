@@ -11,8 +11,8 @@ const Home = lazy(() => import('@vote-seat-web-app/pages/Home'));
 const App = () => {
     return (
         <>
-            <Header />
             <BrowserRouter>
+                <Header />
                 <Suspense fallback={<div>Cargando...</div>}>
                     <Routes>
                         <Route path="/" element={<Home />} />

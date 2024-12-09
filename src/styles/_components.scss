@@ -22,7 +22,7 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 
     &__logo {
       color: $white;
@@ -57,10 +57,11 @@
     color: $white;
     border-radius: 10px;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: bold;
+    cursor: pointer;
 
     &:active {
-      background-color: $primary-color;
+      opacity: 50%;
     }
 
     svg {
@@ -95,7 +96,7 @@
     gap: 20px;
     color: $disabled-color;
     font-size: 21px;
-    font-weight: 700;
+    font-weight: bold;
 
     svg {
       fill: $disabled-color;
@@ -113,4 +114,35 @@
 
 .drawer.open {
   left: 0;
+}
+
+.button {
+  width: 100%;
+  border: none;
+  padding: 15px 0;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Mulish';
+
+  &:active {
+    opacity: 50%;
+  }
+}
+
+.button--link {
+  width: 100%;
+}
+
+.button--primary {
+  color: $white;
+  background-color: #EC008C;
+}
+
+.button--outline {
+  color: #EC008C;
+  border-color: #EC008C;
+  border: 2px solid;
+  padding: 13px 0;
 }

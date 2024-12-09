@@ -11,7 +11,7 @@ const Drawer: FC<DrawerProps> = ({ children, isOpen, onClose }) => (
         <div className="drawer__content">
             <div className="drawer__header">
                 <div className="drawer__header__logo">VoteSeat</div>
-                <button className="drawer__header__close-btn" type="button" onClick={onClose}>
+                <button type="button" className="drawer__header__close-btn" onClick={onClose}>
                     <RiCloseLine size={30} />
                 </button>
             </div>

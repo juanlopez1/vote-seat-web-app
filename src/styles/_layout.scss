@@ -1,8 +1,9 @@
 @use './_variables.scss' as *;
 
 body {
-    margin: 0;
     font-family: 'Mulish', sans-serif;
+    background-color: $page-background-color;
+    margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -10,7 +11,7 @@ body {
 .header {
     background-color: $primary-color;
     padding: 24px;
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -37,4 +38,24 @@ body {
         font-size: 16px;
         font-weight: bold;
     }
+
+    @media (max-width: $breakpoint-tablet) {
+        display: flex;
+    }
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+    @media (min-width: $breakpoint-tablet) {
+        flex-direction: row;
+    }
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
 }

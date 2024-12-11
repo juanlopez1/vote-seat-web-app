@@ -1,9 +1,11 @@
+import { Fragment } from 'react';
+
 import Button from '@vote-seat-web-app/components/Button';
 
 const Home = () => (
-    <div className="page__container">
+    <Fragment>
         <h1>¡Bienvenido a VoteSeat!</h1>
-        <p className="page__description">Calculá la distribución de escaños utilizando el sistema D'Hondt</p>
+        <p className="page__description">Calcule la distribución de escaños utilizando el sistema D'Hondt</p>
         <div className="info-box" role="alert">
             <h4 className="info-box__title">¿Qué es el sistema D'Hondt?</h4>
             <p>
@@ -18,12 +20,12 @@ const Home = () => (
             </p>
         </div>
         <div className="home-page-btn-container">
-            <Button to="/calculate">Realizar cálculo</Button>
+            <Button to="/calculate">Calcular escaños</Button>
             <Button to="/history" style="outline">
                 Ver historial
             </Button>
         </div>
-    </div>
+    </Fragment>
 );
 
 export default Home;

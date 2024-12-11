@@ -1,4 +1,4 @@
-import type { HistoryRecord, PartyList, PartyListWithSeats } from '@vote-seat-web-app/types/calculate.types';
+import type { HistoryRecord, PartyList, PartyListWithSeats } from '@vote-seat-web-app/types/calculation.types';
 
 export type CalculateSeatsRequest = {
     partiesLists: PartyList[];

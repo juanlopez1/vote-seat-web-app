@@ -1,7 +1,11 @@
+const dotenv = require('dotenv');
 const path = require('node:path');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+dotenv.config();
 
 module.exports = {
     entry: path.resolve(__dirname, '../src'),
@@ -51,6 +55,9 @@ module.exports = {
         ],
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env.VOTE_SEAT_API_URL': JSON.stringify(process.env.VOTE_SEAT_API_URL),
+        }),
         new ForkTsCheckerWebpackPlugin({
             async: false,
         }),

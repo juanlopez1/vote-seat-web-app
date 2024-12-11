@@ -1,4 +1,5 @@
 const path = require('node:path');
+const webpack = require('webpack');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { merge } = require('webpack-merge');
@@ -44,6 +45,10 @@ module.exports = merge(common, {
         maxAssetSize: 512000,
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production'),
+            'process.env.VOTE_SEAT_API_URL': JSON.stringify(process.env.VOTE_SEAT_API_URL),
+        }),
         new MiniCssExtractPlugin({
             filename: 'styles/[name].[contenthash].css',
             chunkFilename: '[id].css',

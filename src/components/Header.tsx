@@ -23,7 +23,7 @@ const Header = () => {
                 <RouteItemList LogoComponent={RiHome4Line} label="Home" onClick={toggleDrawer} to="/" />
                 <RouteItemList
                     LogoComponent={RiCalculatorLine}
-                    label="Calcular"
+                    label="Calcular escaños"
                     onClick={toggleDrawer}
                     to="/calculate"
                 />

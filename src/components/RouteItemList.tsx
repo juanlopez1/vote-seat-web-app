@@ -10,7 +10,7 @@ type RouteItemListProps = {
 };
 
 const RouteItemList: FC<RouteItemListProps> = ({ LogoComponent, label, onClick, to }) => {
-    const match = useMatch(to);
+    const match = useMatch(`${to}/*`);
     return (
         <li>
             <Link to={to} onClick={onClick} className={`${match && 'selected'}`}>

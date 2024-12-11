@@ -1,14 +1,20 @@
 @use './_variables.scss' as *;
 
 .drawer {
-  position: fixed;
-  top: 0;
-  left: -150vw;
-  width: 100%;
-  height: 100vh;
+  position: sticky;
   background-color: $primary-color;
   color: $white;
-  transition: left 0.3s ease;
+  width: 340px;
+  height: auto;
+
+  @media (max-width: $breakpoint-tablet) {
+    position: fixed;
+    top: 0;
+    left: -150vw;
+    width: 100%;
+    height: 100vh;
+    transition: left 0.3s ease;
+  }
 
   &__content {
     display: flex;
@@ -42,6 +48,10 @@
 
       svg {
         fill: $white;
+      }
+
+      @media (min-width: $breakpoint-tablet) {
+        display: none;
       }
     }
   }
@@ -86,6 +96,11 @@
       width: 6px;
       height: 44px;
     }
+
+    @media (min-width: $breakpoint-tablet) {
+      position: relative;
+      right: -25px;
+    }
   }
 
   a {
@@ -117,6 +132,7 @@
 }
 
 .button {
+  display: flex;
   width: 100%;
   border: none;
   padding: 15px 0;
@@ -125,32 +141,40 @@
   font-weight: bold;
   cursor: pointer;
   font-family: 'Mulish';
+  align-items: center;
+  justify-content: center;
 
   &:active {
     opacity: 50%;
+  }
+
+  &:disabled {
+    background-color: gray;
+    cursor: not-allowed;
   }
 }
 
 .button--link {
   width: 100%;
+  text-decoration: none;
 }
 
 .button--primary {
   color: $white;
-  background-color: #EC008C;
+  background-color: $pink;
 }
 
 .button--outline {
-  color: #EC008C;
-  border-color: #EC008C;
+  color: $pink;
+  border-color: $pink;
   border: 2px solid;
   padding: 13px 0;
 }
 
 .info-box {
-  color: #0c5460;
-  background-color: #d1ecf1;
-  border-color: #bee5eb;
+  color: $blue;
+  background-color: $sky-blue;
+  border-color: $sky-blue;
   border: 1px solid;
   border-radius: 5px;
   padding: 15px;
@@ -165,4 +189,129 @@
     margin: 0;
     line-height: 1.5;
   }
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.input-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input {
+  font-family: 'Mulish';
+  font-size: 14px;
+  padding: 15px;
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: $shadow;
+  background-color: $white;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: red;
+  font-size: 14px;
+  gap: 4px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.lists-table {
+  background-color: $white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 12px 0px $shadow;
+
+  &__row {
+    display: grid;
+    gap: 8px;
+    border-bottom: 1px solid;
+    border-color: $shadow;
+    align-items: center;
+  }
+
+  &__add-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      width: auto;
+      padding: 10px;
+      margin: 10px 0;
+    }
+  }
+
+  &__header {
+    color: $gray;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  &__cell {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+
+    input {
+      width: 100%;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $light-gray;
+      }
+    }
+  }
+}
+
+.back-link {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  gap: 8px;
+  color: $pink;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+}
+
+.spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  font-size: 2rem;
+  color: $pink;
 }

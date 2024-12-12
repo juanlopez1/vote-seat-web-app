@@ -115,9 +115,11 @@ const Calculate = () => {
                         </span>
                     )}
                 </div>
-                <Button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? 'Calculando...' : 'Calcular'}
-                </Button>
+                <div className="calc-result-btn">
+                    <Button type="submit" disabled={isSubmitting}>
+                        {isSubmitting ? 'Calculando...' : 'Calcular'}
+                    </Button>
+                </div>
             </form>
         </Fragment>
     );

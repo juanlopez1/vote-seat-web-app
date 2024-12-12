@@ -35,6 +35,20 @@
 
   @media (min-width: $breakpoint-tablet) {
     flex-direction: row;
+    justify-content: center;
+    justify-content: flex-end;
+
+    a {
+      width: auto;
+    }
+
+    :first-child button {
+      padding: 15px 30px;
+    }
+
+    :last-child button {
+      padding: 14px 30px;
+    }
   }
 }
 
@@ -56,4 +70,46 @@
   justify-items: center;
   font-size: 32px;
   color: red;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+  background: linear-gradient(236.14deg, $primary-color, -7.85%, $disabled-color, 105.47%);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0px 0px 12px 0px $shadow;
+    background-color: $white;
+
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+.login-from {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  padding: 30px;
+  gap: 30px;
+}
+
+.calc-result-btn {
+  margin-top: 20px;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      padding: 15px 40px;
+      width: auto;
+    }
+  }
 }

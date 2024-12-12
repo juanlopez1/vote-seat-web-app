@@ -47,11 +47,13 @@ const CalculationResult = () => {
                     </TRow>
                 ))}
             </Table>
-            {!calculationResult?.id && (
-                <Button onClick={onSaveCalculation} disabled={fetching}>
-                    Guardar calculo
-                </Button>
-            )}
+            <div className="calc-result-btn">
+                {!calculationResult?.id && (
+                    <Button onClick={onSaveCalculation} disabled={fetching}>
+                        Guardar calculo
+                    </Button>
+                )}
+            </div>
         </Fragment>
     );
 };
